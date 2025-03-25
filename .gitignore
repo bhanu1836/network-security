@@ -1,4 +1,9 @@
-venv
+venv/
 .env
-Network_Security.egg-info
+Network_Security.egg-info/
+__pycache__/
+*.pyc
+dist/
+build/
+*.egg-info/
 
