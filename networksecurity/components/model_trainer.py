@@ -86,7 +86,7 @@ class ModelTrainer:
        
         Network_model = NetworkModel(preprocessor=preprocessor,model=best_model)
         save_object(self.model_trainer_config.trained_model_file_path,obj=NetworkModel)
-        ## save_object("final_model/model.pkl",best_model)
+        save_object("final_model/model.pkl",best_model)
 
         ## Model Trainer Artifact
         model_trainer_artifact=ModelTrainerArtifact(trained_model_file_path=self.model_trainer_config.trained_model_file_path,
@@ -112,6 +112,7 @@ class ModelTrainer:
                 test_arr[:,-1]
             )
 
-            model = self.train_model(x_train,y_train,x_test,y_test)
+            model_trainer_artifact=self.train_model(x_train,y_train,x_test,y_test)
+            return model_trainer_artifact
         except Exception as e:
             raise NetworkSecurityException(e,sys)
