@@ -112,6 +112,6 @@ class ModelTrainer:
                 test_arr[:,-1]
             )
 
-            model = self.train_model(x_train,y_train)
+            model = self.train_model(x_train,y_train,x_test,y_test)
         except Exception as e:
             raise NetworkSecurityException(e,sys)
