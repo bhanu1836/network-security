@@ -16,6 +16,12 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import AdaBoostClassifier,GradientBoostingClassifier,RandomForestClassifier
 import mlflow
 
+
+import dagshub
+dagshub.init(repo_owner='bhanu1836', repo_name='network-security', mlflow=True)
+
+
+
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
         try:
